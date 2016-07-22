@@ -2,11 +2,77 @@
 <html>
 <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/css/style.css' />
+    <link rel='stylesheet' href='/css/style.css'/>
 </head>
 <body>
 <h1>Express </h1>
 <p>Welcome to <%= title %></p>
 <p><a href="login">登陆</a></p>
+
+<div class="container content">
+    <div id="readme" class="markdown">
+        <ul>
+            <!-- 此处的图片按理应该是动态加载 -->
+            <li><a href="javascript:void(0);"><img src="../img/badge.png" class="badge"></a></li>
+            <li><a href="javascript:void(0);"><img src="../img/coveralls_76.png" class="badge"></a></li>
+            <li><a href="javascript:void(0);"><img src="../img/ejs-mate.png" class="badge"></a></li>
+            <li><a href="javascript:void(0);"><img src="../img/passing.png" class="badge"></a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 底部状态栏 居于网站底部 -->
+<footer class="pane bg-npm-navy-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h3 class="h4 type-npm-pastel-3">You Need Help</h3>
+                <hr class="divider-1">
+                <ul class="list-unstyled h6 em-default">
+                    <li class="pbl"><a class="type-neutral-11" href="https://docs.npmjs.com">Documentation</a></li>
+                    <li class="pbl"><a class="type-neutral-11" href="/support">Support / Contact Us</a></li>
+                    <li class="pbl"><a class="type-neutral-11" href="http://status.npmjs.org/">Registry Status</a></li>
+                    <li class="pbl"><a class="type-neutral-11" href="https://github.com/npm/newww/issues">Website
+                            Issues</a></li>
+                    <li class="pbl"><a class="type-neutral-11" href="https://github.com/npm/npm/issues">CLI Issues</a>
+                    </li>
+                    <li class="pbl"><a class="type-neutral-11" href="/policies/security">Security</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-6 col-md-offset-1">
+                <h3 class="h4 type-npm-pastel-3">About npm</h3>
+                <hr class="divider-1">
+                <ul class="list-unstyled h6 em-default">
+                    <li class="pbl"><a class="type-neutral-11" href="/about">About npm, Inc</a></li>
+                    <li class="pbl"><a class="type-neutral-11" href="/jobs">Jobs</a></li>
+                    <li class="pbl"><a class="type-neutral-11" href="/npm-weekly">npm Weekly</a></li>
+                    <li class="pbl"><a class="type-neutral-11" href="http://blog.npmjs.org">Blog</a></li>
+                    <li class="pbl"><a class="type-neutral-11" href="https://twitter.com/npmjs">Twitter</a></li>
+                    <li class="pbl"><a class="type-neutral-11" href="https://github.com/npm">GitHub</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-6 col-md-offset-1">
+                <h3 class="h4 type-npm-pastel-3">Legal Stuff</h3>
+                <hr class="divider-1">
+                <ul class="list-unstyled h6 em-default">
+                    <li class="pbl"><a class="type-neutral-11" href="/policies/terms">Terms of Use</a></li>
+                    <li class="pbl"><a class="type-neutral-11" href="/policies/conduct">Code of Conduct</a></li>
+                    <li class="pbl"><a class="type-neutral-11" href="/policies/disputes">Package Name Disputes</a></li>
+                    <li class="pbl"><a class="type-neutral-11" href="/policies/privacy">Privacy Policy</a></li>
+                    <li class="pbl"><a class="type-neutral-11" href="/policies/receiving-reports">Reporting Abuse</a>
+                    </li>
+                    <li class="pbl"><a class="type-neutral-11" href="/policies/">Other policies</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="txt-c container">
+        <a class="npm-loves-you type-neutral-11" href="/">
+            npm loves you
+        </a>
+    </div>
+</footer>
 </body>
 </html>
