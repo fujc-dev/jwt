@@ -37,14 +37,14 @@ router.post("/homepage", function (request, response) {
         password: request.body.password
     };
     console.log(paramenters);
-    //预执行脚本
-    (function () {
+    //自运行匿名函数
+    (function (obj) {
         //模拟用户名与密码验证操作
-        if(paramenters.password == "admin" && paramenters.username == "admin"){
+        if(obj.password == "admin" && obj.username == "admin"){
             response.render("homepage.ejs", {title: "Homepage Page"});
         }
         else {
-            response.redirect("/"); //跳转页面(要下ASP.NET WEB2.0用的就是这个)
+            response.redirect("/"); //跳转页面(好像ASP.NET WEB2.0用的就是这个)
         }
     })(paramenters);
 
