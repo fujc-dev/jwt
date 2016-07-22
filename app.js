@@ -22,7 +22,9 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 //视图引擎语言是ejs
 app.set('view engine', 'ejs');
-
+//添加支持ejs的母版页引用
+app.engine('html', require('ejs-mate'));
+app.locals._layoutFile = 'layout.ejs';
 
 // 此处是设置网页的显示LOGO
 //在__dirname下面的这个public本地文件去找这个favicon.ico图标,并把他设置为网页的LOGO
@@ -49,6 +51,7 @@ app.use(function (req, res, next) {
 
 // development error handler
 // will print stacktrace
+// app.get('env'):获取当前用户环境变量NODE_ENV值
 if (app.get('env') === 'development') {
     app.use(function (err, req, res, next) {
         res.status(err.status || 500);
