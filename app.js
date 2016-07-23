@@ -11,7 +11,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 //引入相关路由
-var routes = require('./routes/index');
+var index = require('./routes/index');
 var users = require('./routes/users');
 
 //这一句话至关重要,它实例化了Express并赋值给app变量，接下来都需要用app变量来配置一堆Express的参数
@@ -36,7 +36,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /*讲道理如果没有特殊设置的话,只要涉及到的路由配置都可以放置在里面*/
-app.use('/', routes);
+app.use('/', index);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

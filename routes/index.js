@@ -4,27 +4,35 @@ var express = require('express');
 var router = express.Router();
 
 /**
- * Get Index.ejs Page
+ * Get Login.ejs Page
  */
 router.get("/", function (request, response, next) {
-    //对网页模版进行访问,语法：response.render("/视图名称",[locals]传入模版变量,callback处理函数);
-    //res.send({"username":"12346"});
-    //index.ejs 此处的视图名称可以写全名称,也可以不写前缀
-    response.render('index.ejs', {title: 'Express'});
+    response.render('login.ejs', {title: 'GMS - 管理系统nodejs版本持续更新 version:1.0.0.010'});
+});
+
+//对网页模版进行访问,语法：response.render("/视图名称",[locals]传入模版变量,callback处理函数);
+//res.send({"username":"12346"});
+//index.ejs 此处的视图名称可以写全名称,也可以不写前缀
+/**
+ * Get Index.ejs Page
+ */
+router.post("/index", function (request, response) {
+
+    response.render('index.ejs', {title: 'GMS - 管理系统nodejs版本持续更新 version:1.0.0.010'});
 });
 
 /**
  * Get Login.ejs Page
  */
 router.get("/login", function (request, response) {
-    response.render("login.ejs", {title: "Login Page"});
+    response.render("login.ejs", {title: "GMS - 管理系统nodejs版本持续更新 version:1.0.0.010"});
 });
 
 /**
  * Get logout.ejs Page
  */
 router.get("/logout", function (request, response) {
-    response.render("logout.ejs", {title: "Logout Page"});
+    response.render("logout.ejs", {title: "GMS - 管理系统nodejs版本持续更新 version:1.0.0.010"});
 });
 
 /**
@@ -32,21 +40,21 @@ router.get("/logout", function (request, response) {
  */
 router.post("/homepage", function (request, response) {
     //接收登录参数
-    var paramenters = {
+    var parameters = {
         username: request.body.username,
         password: request.body.password
     };
-    console.log(paramenters);
+    console.log(parameters);
     //自运行匿名函数
     (function (obj) {
         //模拟用户名与密码验证操作
         if(obj.password == "admin" && obj.username == "admin"){
-            response.render("homepage.ejs", {title: "Homepage Page"});
+            response.render("homepage.ejs", {title: "GMS - 管理系统nodejs版本持续更新 version:1.0.0.010"});
         }
         else {
             response.redirect("/"); //跳转页面(好像ASP.NET WEB2.0用的就是这个)
         }
-    })(paramenters);
+    })(parameters);
 
 })
 
