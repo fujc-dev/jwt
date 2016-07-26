@@ -122,7 +122,7 @@
           '<div class="btn-toolbar"><div class="btn-group"></div></div>'
         )
       );
-    };
+    }
     // Handler for option-setting buttons
     function setoptHandler(k,v) {
       return function(e) {
@@ -133,7 +133,7 @@
         jcrop_api.setOptions(opt);
         return false;
       };
-    };
+    }
     // Handler for animation buttons
     function animHandler(v) {
       return function(e) {
@@ -143,8 +143,7 @@
         });
         return false;
       };
-    };
-
+    }
     $('#bgo_buttons .btn:first,#bgc_buttons .btn:last').addClass('active');
     $('#interface').show();
 

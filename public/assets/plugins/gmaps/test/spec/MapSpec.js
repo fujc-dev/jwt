@@ -139,7 +139,7 @@ describe("Creating a map", function() {
             lng : map_with_custom_controls.getCenter().lng()
           });
         }
-      }
+      };;
 
       spyOn(callbacks, 'onclick').andCallThrough();
 

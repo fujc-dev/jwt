@@ -17,7 +17,7 @@ $().ready(function() {
 		focusout: function() {
 			$(this).removeClass("focus");
 		}
-	}
+	};;
 	$("#commentForm").delegate("focusin focusout", ":text, textarea", function(event) {
 		/*
 		this.addClass("focus").one("blur", function() {

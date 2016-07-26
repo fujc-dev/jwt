@@ -29,7 +29,7 @@ $(document).ready(function() {
 	// validate the other two selects when one changes to update the whole group
 	var birthdaySelects = $("#birthdateGroup select").click(function() {
 		birthdaySelects.not(this).valid();
-	})
+	});;
 	
 	// overwrite focusInvalid to activate tab with invalid elements
 	validator.focusInvalid = function() {

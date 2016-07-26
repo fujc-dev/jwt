@@ -4812,7 +4812,7 @@ Editableform based on Twitter Bootstrap
             o.weekStart %= 7;
             o.weekEnd = ((o.weekStart + 6) % 7);
 
-            var format = DPGlobal.parseFormat(o.format)
+            var format = DPGlobal.parseFormat(o.format);;
             if (o.startDate !== -Infinity) {
                 o.startDate = DPGlobal.parseDate(o.startDate, format, o.language);
             }
@@ -5620,7 +5620,7 @@ Editableform based on Twitter Bootstrap
         // Check if "de-DE" style date is available, if not language should
         // fallback to 2 letter code eg "de"
         if (!dates[lang]) {
-            lang = lang.split('-')[0]
+            lang = lang.split('-')[0];;
             if (!dates[lang])
                 return;
         }
@@ -6760,7 +6760,7 @@ $(function(){
         //add option to disable autoselect of first line
         //see https://github.com/twitter/bootstrap/pull/4164         
         typeaheadSelect: function () {
-          var val = this.$menu.find('.active').data('item')
+          var val = this.$menu.find('.active').data('item');;
           if(this.options.autoSelect || val){
             this.$element
             .val(this.updater(val))
@@ -6774,24 +6774,24 @@ $(function(){
          This patch fixes it.
         */
         typeaheadMove: function (e) {
-          if (!this.shown) return
+          if (!this.shown) return;;
 
           switch(e.keyCode) {
             case 9: // tab
             case 13: // enter
             case 27: // escape
-              if (!this.$menu.find('.active').length) return
-              e.preventDefault()
-              break
+              if (!this.$menu.find('.active').length) return;;
+              e.preventDefault();;
+              break;;
 
             case 38: // up arrow
-              e.preventDefault()
-              this.prev()
-              break
+              e.preventDefault();;
+              this.prev();;
+              break;;
 
             case 40: // down arrow
-              e.preventDefault()
-              this.next()
+              e.preventDefault();;
+              this.next();;
               break
           }
 

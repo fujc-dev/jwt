@@ -13,7 +13,7 @@ describe("Adding layers", function() {
   describe("Single layer", function() {
     beforeEach(function() {
       single_layer = single_layer || map_with_layers.addLayer('traffic');
-    })
+    });;
 
     it("should be added in the current map", function() {
       expect(single_layer.getMap()).toEqual(map_with_layers.map);

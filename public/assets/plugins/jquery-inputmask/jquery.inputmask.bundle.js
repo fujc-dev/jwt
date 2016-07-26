@@ -500,7 +500,8 @@
                 var maskL = getMaskLength(buffer);
                 if (pos >= maskL) return maskL;
                 var position = pos;
-                while (++position < maskL && !isMask(position)) { };
+                while (++position < maskL && !isMask(position)) {
+                }
                 return position;
             }
             //pos: from position
@@ -508,7 +509,8 @@
                 var position = pos;
                 if (position <= 0) return 0;
 
-                while (--position > 0 && !isMask(position)) { };
+                while (--position > 0 && !isMask(position)) {
+                }
                 return position;
             }
 
@@ -563,13 +565,12 @@
                 if (caretPos != undefined) {
                     caret(input, caretPos);
                 }
-            };
+            }
             function clearBuffer(buffer, start, end) {
                 for (var i = start, maskL = getMaskLength(buffer) ; i < end && i < maskL; i++) {
                     setBufferElement(buffer, i, getBufferElement(getActiveBuffer().slice(), i));
                 }
-            };
-
+            }
             function setReTargetPlaceHolder(buffer, pos) {
                 var testPos = determineTestPosition(pos);
                 setBufferElement(buffer, pos, getBufferElement(getActiveBuffer(), testPos));
@@ -731,8 +732,7 @@
                     }
                     return { "begin": begin, "end": end };
                 }
-            };
-
+            }
             function isComplete(buffer) {
                 var complete = false, highestValidPosition = 0, currentActiveMasksetIndex = activeMasksetIndex;
                 $.each(masksets, function (ndx, ms) {
@@ -984,7 +984,7 @@
                         }
                     } else {
                         if (!npt._valueGet) {
-                            npt._valueGet = function () { return this.value; }
+                            npt._valueGet = function () { return this.value; };;
                             npt._valueSet = function (value) { this.value = value; }
                         }
                         if ($.fn.val.inputmaskpatch != true) {
@@ -1081,8 +1081,7 @@
                     if (buffer.length == 0) buffer = getActiveBuffer().slice();
 
                     return end - (lengthBefore - buffer.length);  //return new start position
-                };
-
+                }
                 function keydownEvent(e) {
                     //Safari 5.1.x - modal dialog fires keypress twice workaround
                     skipKeyPressEvent = false;
@@ -2038,7 +2037,7 @@ Optional extensions on the jquery.inputmask base
                 number: function (groupSeparator, groupSize, radixPoint, digits) {
                     var escapedGroupSeparator = $.inputmask.escapeRegex.call(this, groupSeparator);
                     var escapedRadixPoint = $.inputmask.escapeRegex.call(this, radixPoint);
-                    var digitExpression = isNaN(digits) ? digits : '{0,' + digits + '}'
+                    var digitExpression = isNaN(digits) ? digits : '{0,' + digits + '}';;
                     return new RegExp("^[\+]?(\\d+|\\d{1," + groupSize + "}((" + escapedGroupSeparator + "\\d{" + groupSize + "})?)+)(" + escapedRadixPoint + "\\d" + digitExpression + ")?$");
                 }
             },

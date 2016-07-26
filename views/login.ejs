@@ -38,7 +38,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     <link href="../assets/css/pages/login.css" rel="stylesheet" type="text/css"/>
     <link href="../assets/css/custom.css" rel="stylesheet" type="text/css"/>
     <!-- END THEME STYLES -->
-    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="../favicon.ico"/>
 </head>
 <!-- BEGIN BODY -->
 <body class="login">
@@ -54,7 +54,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         <h3 class="form-title">GMS - 登录</h3>
         <div class="alert alert-danger display-hide">
             <button class="close" data-close="alert"></button>
-            <span>Enter any username and password.</span>
+            <span>请输入正确的用户名或密码.</span>
         </div>
         <div class="form-group">
             <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
@@ -461,14 +461,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script src="../assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="assets/plugins/select2/select2.min.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+<!-- 登录相关处理脚本 -->
 <script src="../assets/scripts/app.js" type="text/javascript"></script>
 <script src="../assets/scripts/login.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
+<!-- 登录相关处理脚本 -->
 <script>
     jQuery(document).ready(function () {
-        App.init();
-        Login.init();
+        App.init();     //框架初始化
+        Login.init();   //初始化页面验证以及处理相关
     });
 </script>
 <!-- END JAVASCRIPTS -->

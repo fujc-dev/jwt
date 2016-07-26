@@ -40,8 +40,7 @@
 			res.end = res.begin + range.text.length;
 		}
 		return res;
-	};
-
+	}
 	function setCaretPosition(ctl, pos){
 		if(ctl.setSelectionRange){
 			ctl.focus();
@@ -53,8 +52,7 @@
 			range.moveStart('character', pos);
 			range.select();
 		}
-	};
-	
+	}
 	//Predefined character definitions
 	var charMap={
 		'9':"[0-9]",
@@ -205,9 +203,9 @@
 				for(var i=start;i<end;i++){
 					if(!locked[i])
 						buffer[i]=settings.placeholder;
-				}				
-			};
-			
+				}
+
+			}
 			function writeBuffer(pos){
 				var s="";
 				for(var i=0;i<mask.length;i++){
@@ -217,8 +215,7 @@
 				}
 				input.val(s);
 				return s;
-			};
-			
+			}
 			function checkVal(){	
 				//try to place charcters where they belong
 				var test=input.val();
@@ -239,8 +236,9 @@
 				if(!s.match(re)){							
 					input.val("");	
 					clearBuffer(0,mask.length);
-				}					
-			};				
+				}
+
+			}
 		});
 	};
 })(jQuery);

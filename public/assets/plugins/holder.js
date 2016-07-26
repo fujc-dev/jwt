@@ -16,14 +16,35 @@ fallback = false,
 canvas = document.createElement('canvas');
 
 //getElementsByClassName polyfill
-document.getElementsByClassName||(document.getElementsByClassName=function(e){var t=document,n,r,i,s=[];if(t.querySelectorAll)return t.querySelectorAll("."+e);if(t.evaluate){r=".//*[contains(concat(' ', @class, ' '), ' "+e+" ')]",n=t.evaluate(r,t,null,0,null);while(i=n.iterateNext())s.push(i)}else{n=t.getElementsByTagName("*"),r=new RegExp("(^|\\s)"+e+"(\\s|$)");for(i=0;i<n.length;i++)r.test(n[i].className)&&s.push(n[i])}return s})
+document.getElementsByClassName||(document.getElementsByClassName=function(e){var t=document,n,r,i,s=[];if(t.querySelectorAll)return t.querySelectorAll("."+e);if(t.evaluate){r=".//*[contains(concat(' ', @class, ' '), ' "+e+" ')]",n=t.evaluate(r,t,null,0,null);while(i=n.iterateNext())s.push(i)}else{n=t.getElementsByTagName("*"),r=new RegExp("(^|\\s)"+e+"(\\s|$)");for(i=0;i<n.length;i++)r.test(n[i].className)&&s.push(n[i])}return s});;
 
 //getComputedStyle polyfill
-window.getComputedStyle||(window.getComputedStyle=function(e,t){return this.el=e,this.getPropertyValue=function(t){var n=/(\-([a-z]){1})/g;return t=="float"&&(t="styleFloat"),n.test(t)&&(t=t.replace(n,function(){return arguments[2].toUpperCase()})),e.currentStyle[t]?e.currentStyle[t]:null},this})
+window.getComputedStyle||(window.getComputedStyle=function(e,t){return this.el=e,this.getPropertyValue=function(t){var n=/(\-([a-z]){1})/g;return t=="float"&&(t="styleFloat"),n.test(t)&&(t=t.replace(n,function(){return arguments[2].toUpperCase()})),e.currentStyle[t]?e.currentStyle[t]:null},this});;
 
 //http://javascript.nwbox.com/ContentLoaded by Diego Perini with modifications
-function contentLoaded(n,t){var l="complete",s="readystatechange",u=!1,h=u,c=!0,i=n.document,a=i.documentElement,e=i.addEventListener?"addEventListener":"attachEvent",v=i.addEventListener?"removeEventListener":"detachEvent",f=i.addEventListener?"":"on",r=function(e){(e.type!=s||i.readyState==l)&&((e.type=="load"?n:i)[v](f+e.type,r,u),!h&&(h=!0)&&t.call(n,null))},o=function(){try{a.doScroll("left")}catch(n){setTimeout(o,50);return}r("poll")};if(i.readyState==l)t.call(n,"lazy");else{if(i.createEventObject&&a.doScroll){try{c=!n.frameElement}catch(y){}c&&o()}i[e](f+"DOMContentLoaded",r,u),i[e](f+s,r,u),n[e](f+"load",r,u)}};
-
+	function contentLoaded(n, t) {
+		var l = "complete", s = "readystatechange", u = !1, h = u, c = !0, i = n.document, a = i.documentElement, e = i.addEventListener ? "addEventListener" : "attachEvent", v = i.addEventListener ? "removeEventListener" : "detachEvent", f = i.addEventListener ? "" : "on", r = function (e) {
+			(e.type != s || i.readyState == l) && ((e.type == "load" ? n : i)[v](f + e.type, r, u), !h && (h = !0) && t.call(n, null))
+		}, o = function () {
+			try {
+				a.doScroll("left")
+			} catch (n) {
+				setTimeout(o, 50);
+				return
+			}
+			r("poll")
+		};
+		if (i.readyState == l)t.call(n, "lazy"); else {
+			if (i.createEventObject && a.doScroll) {
+				try {
+					c = !n.frameElement
+				} catch (y) {
+				}
+				c && o()
+			}
+			i[e](f + "DOMContentLoaded", r, u), i[e](f + s, r, u), n[e](f + "load", r, u)
+		}
+	}
 //https://gist.github.com/991057 by Jed Schmidt with modifications
 function selector(a){
 	a=a.match(/^(\W)?(.*)/);var b=document["getElement"+(a[1]?a[1]=="#"?"ById":"sByClassName":"sByTagName")](a[2]);
@@ -38,13 +59,13 @@ if (!Object.prototype.hasOwnProperty)
 	Object.prototype.hasOwnProperty = function(prop) {
 		var proto = this.__proto__ || this.constructor.prototype;
 		return (prop in this) && (!(prop in proto) || proto[prop] !== this[prop]);
-	}
+	};;
 
 function text_size(width, height, template) {
 	height = parseInt(height,10);
 	width = parseInt(width,10);
-	var bigSide = Math.max(height, width)
-	var smallSide = Math.min(height, width)
+	var bigSide = Math.max(height, width);;
+	var smallSide = Math.min(height, width);;
 	var scale = 1 / 12;
 	var newHeight = Math.min(smallSide * 0.75, 0.75 * bigSide * scale);
 	return {
@@ -129,9 +150,8 @@ function render(mode, el, holder, src) {
 			fluid_update(el);
 		}
 	}
-};
-
-function fluid_update(element) {
+}
+	function fluid_update(element) {
 	var images;
 	if (element.nodeType == null) {
 		images = fluid_images;
@@ -139,7 +159,7 @@ function fluid_update(element) {
 		images = [element]
 	}
 	for (i in images) {
-		var el = images[i]
+		var el = images[i];;
 		if (el.holderData) {
 			var holder = el.holderData;
 			el.setAttribute("src", draw(ctx, {
@@ -181,11 +201,8 @@ function parse_flags(flags, options) {
 
 	return render ? ret : false;
 
-};
-
-
-
-if (!canvas.getContext) {
+}
+	if (!canvas.getContext) {
 	fallback = true;
 } else {
 	if (canvas.toDataURL("image/png")
@@ -280,7 +297,7 @@ app.flags = {
 	auto: {
 		regex: /^auto$/
 	}
-}
+};;
 
 for (var flag in app.flags) {
 	if (!app.flags.hasOwnProperty(flag)) continue;
@@ -298,7 +315,7 @@ app.add_image = function (src, el) {
 	var node = selector(el);
 	if (node.length) {
 		for (var i = 0, l = node.length; i < l; i++) {
-			var img = document.createElement("img")
+			var img = document.createElement("img");;
 			img.setAttribute("data-src", src);
 			node[i].appendChild(img);
 		}

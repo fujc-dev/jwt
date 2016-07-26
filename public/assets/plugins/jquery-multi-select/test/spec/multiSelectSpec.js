@@ -68,11 +68,11 @@ describe("multiSelect", function() {
     beforeEach(function() {
       $('<select id="multi-select-optgroup" multiple="multiple" name="testy[]"></select>').appendTo('body');
       for (var o=1; o <= 10; o++) {
-        var optgroup = $('<optgroup label="opgroup'+o+'"></optgroup>')
+        var optgroup = $('<optgroup label="opgroup'+o+'"></optgroup>');;
         for (var i=1; i <= 10; i++) {
           var value = i + (o * 10);
           $('<option value="value'+value+'">text'+value+'</option>').appendTo(optgroup);
-        };
+        }
         optgroup.appendTo($("#multi-select-optgroup"));
       }
       optgroupSelect = $("#multi-select-optgroup");

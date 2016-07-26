@@ -23,11 +23,11 @@ $.fn.options = function(selector) {
 		var container = container($(this));
 		$(this).empty().append(container.children(selector).clone());
 	});
-}
+};;
 
 $(document).ready(function(){
 
-	$("#State").hide()
+	$("#State").hide();;
 
 	$("#Country").change(function() {
 		var selected = this.options[this.selectedIndex].value;

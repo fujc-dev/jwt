@@ -243,8 +243,7 @@ the specific language governing permissions and limitations under the Apache Lic
             if (evaluated === false) { value = formula(); evaluated = true; }
             return value;
         };
-    };
-
+    }
     function installDebouncedScroll(threshold, element) {
         var notify = debounce(threshold, function (e) { element.trigger("scroll-debounced", e);});
         element.on("scroll", function (e) {
@@ -1774,8 +1773,7 @@ the specific language governing permissions and limitations under the Apache Lic
                 } else {
                     return this.opts.width;
                }
-            };
-
+            }
             var width = resolveContainerWidth.call(this);
             if (width !== null) {
                 this.container.css("width", width);
@@ -1989,7 +1987,7 @@ the specific language governing permissions and limitations under the Apache Lic
                         this.clear();
                     }
                     killEvent(e);
-                    return;
+                    
                 }
             }));
 
