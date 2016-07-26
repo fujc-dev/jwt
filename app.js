@@ -39,11 +39,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
-// catch 404 and forward to error handler
+// 捕获路由异常 怎么触发的目前还不知道？？？？
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
     //好像此处需要用try来捕获
-    err.status = 404;
+    try{
+        err.status = 404;
+    }
+    catch(e){
+        console.log(e);
+    }
+
     next(err);
 });
 
