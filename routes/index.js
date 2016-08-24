@@ -3,7 +3,7 @@ var express = require('express');
 //初始化路由器Router
 var router = express.Router();
 
-const title = "GMS - 管理系统nodejs版本持续更新 version:1.0.0.010";
+const title = "AILSABE - 管理系统nodejs版本持续更新 version:1.0.0.010";
 
 /**
  * Get Login.ejs Page
