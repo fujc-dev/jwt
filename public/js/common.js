@@ -8,6 +8,7 @@
  * @param callback 回调函数
  */
 module.exports = function (params,callback) {
-    // 记住密码
 
-}
+    
+
+};

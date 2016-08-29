@@ -20,7 +20,18 @@ router.get("/", function (request, response, next) {
  * Get Index.ejs Page(登录跳转)
  */
 router.post("/index", function (request, response) {
+    //接收登录参数
+    var parameters = {
+        username: request.body.username,
+        password: request.body.password
+    };
+    //查询数据库，验证用户名以及密码是否正确
+
+    //写入登录日志
+
+    //返回相关配置信息
     console.log("跳转至首页");
+    //跳转至首页
     response.render('index.ejs', {title: title});
 });
 

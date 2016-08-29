@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 导航菜单  动态生成导航菜单-->
+<menu>
+    <!-- sub-menu表示一级菜单 -->
+    <sub-menu class="start active" icon="fa fa-home" href="/console" state="selected" name="控制面板"/>
+    <sub-menu class="" icon="fa fa-briefcase" href="javascript:;" name="菜单1-无子集菜单"/>
+    <sub-menu class="" icon="fa fa-cogs" href="javascript:;" state="arrow" name="Layouts">
+        <menu icon="" href="javascript:;" class="badge badge-roundless badge-warning">Session Timeout</menu>
+        <menu icon="" href="javascript:;" class="badge badge-roundless badge-important">User Idle Timeout</menu>
+        <menu icon="" href="javascript:;">Language Switch Bar</menu>
+        <menu icon="" href="javascript:;">Horizontal And Sidebar Menu</menu>
+        <menu icon="" href="javascript:;">Horizontal Menu 1</menu>
+        <menu icon="" href="javascript:;">Horizontal Menu 2</menu>
+        <menu icon="" href="javascript:;" class="badge badge-roundless badge-warning">Sidebar Toggler On Header</menu>
+        <menu icon="" href="javascript:;">Sidebar Fixed Page</menu>
+    </sub-menu>
+    <sub-menu class="tooltips" icon="" data-placement="right"
+              data-original-title="Frontend&nbsp;Theme For&nbsp;Metronic&nbsp;Admin" href="javascript:;" target="_blank"
+              name="Frontend Theme"/>
+
+</menu>
