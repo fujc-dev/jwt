@@ -15,10 +15,20 @@ router.get("/", function (request, response, next) {
 //对网页模版进行访问,语法：response.render("/视图名称",[locals]传入模版变量,callback处理函数);
 //res.send({"username":"12346"});
 //index.ejs 此处的视图名称可以写全名称,也可以不写前缀
+
 /**
- * Get Index.ejs Page
+ * Get Index.ejs Page(登录跳转)
  */
 router.post("/index", function (request, response) {
+    console.log("跳转至首页");
+    response.render('index.ejs', {title: title});
+});
+
+/**
+ *  刷新页面
+ */
+router.get("/index",function (request,response) {
+    console.log("刷新页面信息");
     response.render('index.ejs', {title: title});
 });
 
